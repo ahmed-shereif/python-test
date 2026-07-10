@@ -24,4 +24,4 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: asherif310/python-test:${{ github.sha::6  }}
+          tags: asherif310/python-test:${{ github.sha }}
