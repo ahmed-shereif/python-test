@@ -11,7 +11,7 @@ image:
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1"
+  tag: "bc3224f"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
@@ -60,18 +60,17 @@ service:
 ingress:
   enabled: true
   className: "nginx"
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
   hosts:
     - host: argocd.example.com
       paths:
         - path: /api/v1
           pathType: Prefix
-  tls: []
-    # - secretName: chart-example-tls
-    #   hosts:
-    #     - argocd.example.com
+  tls:
+    - secretName: argocd-server-tls
+      hosts:
+        - argocd.example.com
 
 # -- Expose the service via gateway-api HTTPRoute
 # Requires Gateway API resources and suitable controller installed within the cluster
