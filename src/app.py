@@ -11,6 +11,7 @@ def get_details():
         'version': '1.0',
         'description': 'This is a sample API endpoint.',
         'hostname': socket.gethostname(),
+        'message': 'Hello from the API!'
     }
     return jsonify(details)
 
