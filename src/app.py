@@ -13,7 +13,8 @@ def get_details():
         'hostname': socket.gethostname(),
         'message': 'Hello from the API!',
         "m2": "This is a sample message from the API.",
-        'm3': 'This is another sample message from the API.'
+        'm3': 'This is another sample message from the API.',
+        'm4': 'This is yet another sample message from the API.',
     }
     return jsonify(details)
 
