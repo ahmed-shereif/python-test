@@ -67,10 +67,15 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Install ArgoCD CLI
+        env:
+          ARGOCD_VERSION: v2.13.3
         run: |
-          mkdir -p "$HOME/.local/bin"
-          curl -sSL -o "$HOME/.local/bin/argocd" https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
-          chmod +x "$HOME/.local/bin/argocd"
+          if ! command -v argocd &>/dev/null || [[ "$(argocd version --client --short 2>/dev/null)" != *"$ARGOCD_VERSION"* ]]; then
+            mkdir -p "$HOME/.local/bin"
+            curl -sSL -o "$HOME/.local/bin/argocd" \
+              "https://github.com/argoproj/argo-cd/releases/download/${ARGOCD_VERSION}/argocd-linux-amd64"
+            chmod +x "$HOME/.local/bin/argocd"
+          fi
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: argocd app sync
