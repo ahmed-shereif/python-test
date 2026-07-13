@@ -63,7 +63,7 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
   hosts:
-    - host: python-test.example.com
+    - host: 
       paths:
         - path: /api/v1
           pathType: Prefix
