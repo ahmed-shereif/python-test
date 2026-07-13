@@ -13,7 +13,7 @@ metadata:
 spec:
   type: service
   lifecycle: development
-  owner: your-team
+  owner: guests
   providesApis:
     - python-test-api
 ---
@@ -25,7 +25,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: development
-  owner: your-team
+  owner: guests
   definition: |
     openapi: "3.0.0"
     info:
