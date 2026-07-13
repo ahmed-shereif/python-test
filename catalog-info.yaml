@@ -31,6 +31,9 @@ spec:
     info:
       title: python-test API
       version: "1.0"
+    servers:
+      - url: https://python-test.example.com
+        description: Production
     paths:
       /api/v1/details:
         get:
