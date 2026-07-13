@@ -5,7 +5,7 @@ metadata:
   description: A sample Flask API service exposing /api/v1/details and /api/v1/health
   annotations:
     # Replace with your actual SCM URL, e.g. github.com/org/repo
-    backstage.io/source-location: url:https://github.com/ahmed-shereif/python-test
+    backstage.io/source-location: url:https://github.com/dxcorg/python-test
     # Kubernetes namespace where this service is deployed
     backstage.io/kubernetes-id: python-test
     # Helm chart reference (optional)
