@@ -14,8 +14,7 @@ def get_details():
         'message': 'Hello from the API!',
         "m2": "This is a sample message from the API.",
         'm3': 'This is another sample message from the API.',
-        'm4': 'This is yet another sample message from the API.',
-        'm5': 'This is a fifth sample message from the API.',
+        'm4': 'This is yet another sample message from the API.'
     }
     return jsonify(details)
 
